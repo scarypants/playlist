@@ -178,13 +178,13 @@ function onSongSelected(song) {
 
     audio.pause()
     audio.currentTime = 0
-    audioSource.src = "/song/" + song.file // 파일 경로에 맞게 수정
+    audioSource.src = "song/" + song.file // 파일 경로에 맞게 수정
     audio.load()
 
     currentLyrics = song.lyrics
     loadLyrics(currentLyrics)
     updateSongInfo(song)
-    updateLyricsContainerColor("/img/" + song.cover) // 이미지 경로에 맞게 수정
+    updateLyricsContainerColor("img/" + song.cover) // 이미지 경로에 맞게 수정
 
     audio.play()
 }
