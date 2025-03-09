@@ -3,7 +3,7 @@ const songs = [
     {
         title: "Congratulations",
         artist: "Mac Miller",
-        file: "Mac Miller - Congratulations (feat. Bilal).mp3",
+        file: "Congratulations.mp3",
         cover: "congratulations.png",
         lyrics: [
             { time: 0.2, text: "Where are you?" },
@@ -75,7 +75,7 @@ const songs = [
     {
         title: "homesick",
         artist: "wave to earth",
-        file: "wave to earth - homesick.mp3",
+        file: "homesick.mp3",
         cover: "homesick.jpg",
         lyrics: [
             { time: 25, text: "In this cold place" },
