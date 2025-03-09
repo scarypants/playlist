@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>멀티 음원 가사 싱크 플레이어</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <section id="mainContainer">
+        <!-- Left Panel: Playlist -->
+        <section id="leftPanel">
+            <section id="playlist"></section>
+        </section>
+        <!-- Right Panel: Title/Singer, Lyrics, Custom Audio Control -->
+        <section id="rightPanel">
+            <section id="songInfo"></section>
+            <section id="lyricsContainer"></section>
+            <div id="audioContainer">
+                <audio id="audio" preload="metadata">
+                    <source id="audioSource" src="" type="audio/mpeg">
+                    브라우저가 audio 태그를 지원하지 않습니다.
+                </audio>
+                <!-- Custom Audio Control -->
+                <div id="customControls">
+                    <button id="playPauseBtn">▶</button>
+                    <div id="progressContainer">
+                        <div id="progressBar"></div>
+                    </div>
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

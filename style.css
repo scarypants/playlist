@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+strong {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+section {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+* {
+    caret-color: transparent;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 15vh 20vw;
+    overflow-y: hidden;
+}
+
+/* 전체 레이아웃을 좌우 2열로 구성 */
+#mainContainer {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 왼쪽: 플레이리스트 영역 */
+#leftPanel {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+/* 오른쪽: 음원 정보, 재생 바, 가사 영역 */
+#rightPanel {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* 플레이리스트 스타일 */
+#playlist {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 465px;
+}
+
+.songItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.songItem:hover {
+    background-color: #333;
+}
+
+.songItem img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* 오른쪽 영역 구성요소 스타일 */
+#songInfo {
+    height: 5vh;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 커스텀 오디오바 컨테이너: 배경색은 가사 컨테이너와 비슷한 색(동적으로 업데이트 가능) */
+#audioContainer {
+    background-color: var(--audio-bg, #1e1e1e);
+    /* 추출한 색상을 CSS 변수로 설정할 수 있음 */
+    border-radius: 10px;
+    padding: 10px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 커스텀 컨트롤 레이아웃 */
+#customControls {
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+/* 플레이/일시정지 버튼: 아이콘과 텍스트는 흰색 */
+#playPauseBtn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 진행 바 컨테이너: 반투명 흰색 배경, 둥근 모서리 */
+#progressContainer {
+    flex: 1;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    margin: 5px 15px 0 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* 진행 바: 흰색 */
+#progressBar {
+    height: 100%;
+    width: 0;
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* 타이머 텍스트 */
+#currentTime,
+#duration {
+    font-size: 14px;
+    color: #fff;
+}
+
+#lyricsContainer {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+    margin: 20px auto;
+    z-index: 1;
+}
+
+/* WebKit 계열 브라우저 (Chrome, Safari, Edge 등) */
+#lyricsContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+#lyricsContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#lyricsContainer::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    /* 투명한 흰색 */
+    border-radius: 8px;
+}
+
+/* 스크롤바 버튼(화살표) 제거 */
+#lyricsContainer::-webkit-scrollbar-button {
+    background-color: #1e1e1e;
+}
+
+/* Firefox */
+#lyricsContainer {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.lyricLine {
+    font-size: 18px;
+    margin: 10px 0;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.lyricLine:hover {
+    opacity: 0.8;
+}
+
+.active {
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 1;
+}
