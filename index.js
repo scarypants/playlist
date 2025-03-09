@@ -206,7 +206,7 @@ function loadPlaylist() {
 
         // 앨범 표지 이미지 생성 및 추가
         const img = document.createElement("img")
-        img.src = "img/" + song.cover // 경로가 올바른지 확인 (예: "img/congratulations.png")
+        img.src = "./img/" + song.cover // 경로가 올바른지 확인 (예: "img/congratulations.png")
         img.alt = song.title + " album cover"
         
         // 노래 제목과 아티스트 정보를 담은 div 생성
